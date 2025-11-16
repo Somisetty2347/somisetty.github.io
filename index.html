@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somisetty Reddaiah - AI & LLM Engineer</title>
+    <meta name="theme-color" content="#000">
+    <style>
+        :root {
+            --text: #fff;
+            --background: #000;
+            --linkTag: #0bc;
+            --linkA: #0f0;
+            --linkB: #ff0096;
+            --linkC: #0bc;
+            --font-size: 16px;
+            --transition-speed: 0.3s;
+        }
+
+        [data-theme="light"] {
+            --text: #000;
+            --background: #fff;
+            --linkTag: #00a8b7;
+            --linkA: #00cc00;
+            --linkB: #e50087;
+            --linkC: #00a8b7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1.25rem;
+            background-color: var(--background);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: var(--font-size);
+            line-height: 1.6;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .header {
+            max-width: 50rem;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-toggle {
+            font-size: 1.5rem;
+            color: var(--text);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color var(--transition-speed);
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(128, 128, 128, 0.2);
+        }
+
+        #console {
+            max-width: 50rem;
+            margin: 0 auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        a {
+            color: var(--linkTag);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #a {
+            color: var(--linkA);
+        }
+
+        #b {
+            color: var(--linkB);
+        }
+
+        #c {
+            color: var(--linkC);
+        }
+
+        p {
+            margin-bottom: 0.5rem;
+        }
+
+        .ascii-art {
+            font-family: 'Courier New', Courier, monospace;
+            /* Monospaced Font Stack */
+            white-space: pre;
+            /* Preserve whitespace and line breaks */
+            font-size: 16px;
+            /* Adjust as needed */
+            line-height: 1.2;
+            /* Adjust for better readability */
+            overflow-x: auto;
+            /* Add horizontal scroll if needed */
+            background-color: #0b0a0a;
+            /* Optional: Background color for contrast */
+            padding: 10px;
+            /* Optional: Padding for aesthetics */
+            border-radius: 5px;
+            /* Optional: Rounded corners */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .ascii-art {
+                font-size: 14px;
+                /* Slightly smaller font on smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 1.25rem;
+            }
+
+            .ascii-art {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.75rem;
+                font-size: 12px;
+            }
+
+            h1 {
+                font-size: 1rem;
+            }
+
+            .ascii-art {
+                font-size: 0.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>SOMISETTY REDDAIAH</h1>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="far fa-sun"></i>
+        </button>
+    </header>
+    <div id="console"></div>
+
+    <script src="https://kit.fontawesome.com/885fbd8d84.js" crossorigin="anonymous" defer></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'dark' ? '<i class="far fa-sun"></i>' : '<i class="far fa-moon"></i>';
+        });
+
+        // Typer functionality
+        const Typer = {
+            text: `<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> cat about_me.txt
+<p>Software Developer @Bitcot Technologies | AI & LLM Engineer | BE-CSE @Sathyabama Institute (CGPA: 9.05)<br>Specializing in Multi-Agent Systems, Agentic RAG, and Healthcare AI Automation<br>Building intelligent conversational AI systems with LangChain, LangGraph & AWS</p>
+<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> cat work_experience.txt
+<p>🏢 Software Developer @<a href="#">Bitcot Technologies, Chennai</a> (Dec 2024 - Present)<br>• Built multi-agent healthcare automation platform using LangGraph & AWS Lambda<br>• Developed real-time voice-to-voice conversational AI with OpenAI Realtime API<br>• Implemented AI quality assurance framework with LangSmith, LangFuse & pytest<br>• Created empathetic healthcare chatbot for cancer patients with emotion-aware responses<br>• Automated Jira release-note generation, reducing prep time from hours to minutes</p>
+<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> cat internships.txt
+<p>🔬 R&D Intern - AI & ML @<a href="#">Genpact, Bengaluru</a> (Jan 2024 - Jun 2024)<br>• Developed Dynamic Document Answering System using LLMs with Python & Flask<br>• Implemented intelligent question-answering to enhance user interaction<br><br>💼 ML Intern @<a href="#">HCL Tech, Chennai</a> (Jan 2023 - May 2023)<br>• Built voice emotion detection system with ML models for prediction<br>• Performed data analysis to accurately detect emotions in human voices</p>
+<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> cat technical_skills.txt
+<p>🛠️ Languages & Backend: Python | PostgreSQL | Flask | FastAPI | Redis | Docker<br>🤖 Agentic & LLM Stack: AI Agents | Agentic RAG | Pydantic AI | LangChain | LangGraph | RAG<br>📊 Evaluation & Monitoring: LangSmith | LangWatch | LangFuse<br>✨ Prompting: Prompt Engineering | Contextual Engineering | DSPy<br>🔗 Protocols: Model Context Protocol (MCP)<br>☁️ Cloud Platforms: AWS | Azure<br>⚙️ Developer Tools: Git | GitHub | Cursor | Claude Code | Postman</p>
+<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> cat education.txt
+<p>🎓 BE-CSE, Sathyabama Institute of Science and Technology (2020 - 2024) | CGPA: 9.05<br>🏫 12th, Vignan Co-operative Junior College (2018 - 2020) | Percentage: 97%</p>
+<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> cat contact.txt
+<p>📧 <a href="mailto:somisettyreddaiah2001@gmail.com">somisettyreddaiah2001@gmail.com</a><br>📱 +91 9177605026<br>💼 <a href="https://www.linkedin.com/in/somisettyreddaiah">LinkedIn</a></p>
+<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> cat resume.txt
+<p>📄 <a href="src/Somisetty Reddaiah.pdf">Download Resume (PDF)</a></p>
+<span id="a">reddaiah</span>:<span id="b">~</span><span id="c">$</span> exit`,
+            index: 0,
+            speed: 1, // Delay in milliseconds between each character
+            typing: true, // Flag to control typing
+            type: function () {
+                if (this.typing && this.index <= this.text.length) {
+                    const content = this.text.substring(0, this.index);
+                    document.getElementById('console').innerHTML = content;
+                    window.scrollTo(0, document.body.scrollHeight);
+                    this.index += 1;
+                    setTimeout(() => this.type(), this.speed);
+                }
+            },
+            skip: function () {
+                this.typing = false;
+                document.getElementById('console').innerHTML = this.text;
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        };
+
+        Typer.type();
+
+        // Add event listener to the header to skip typing
+        document.querySelector('.header').addEventListener('click', () => {
+            Typer.skip();
+        });
+    </script>
+</body>
+
+</html>
